@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="运维自动化到云平台、DevOps、SRE与平台工程的清晰职业路线">
+<meta name="description" content="运维自动化到云平台、DevOps、SRE与平台工程的清晰职业路线，含国内与外企技术栈对照">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Ops Compass｜运维自动化职业路线图">
 <meta property="og:description" content="五个阶段：学什么、每天做什么、交付什么、企业岗位怎么叫。">
@@ -75,7 +75,11 @@ h1{font-size:clamp(36px,5vw,60px);line-height:1.12;letter-spacing:-1.5px;margin:
 .effort span{display:inline-block;background:#ffffff26;border-radius:20px;padding:1px 9px}
 .stage-body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
 .label{font:700 11px Consolas,"Microsoft YaHei",monospace;letter-spacing:.6px;color:var(--label);margin:0 0 4px}
-.skilltext{font-size:13px;line-height:1.65;color:var(--skill);margin:0 0 13px}
+.skilltext{font-size:13px;line-height:1.65;color:var(--skill);margin:0 0 8px}
+.market{font-size:12px;line-height:1.6;color:var(--duty);margin:0 0 13px}
+.market div{margin-top:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:4px;padding:0 6px;margin-right:6px;color:#fff}
+.tag.cn{background:#c8553d}.tag.fx{background:#2f6fb0}
 .duty{font-size:13px;color:var(--duty);margin:0 0 13px}
 .deliver{border-left:2px solid var(--mint);padding-left:9px;margin:0 0 13px;font-size:13px;color:var(--deliver)}
 .scenario{background:var(--soft);border-radius:8px;padding:11px;font-size:13px;color:var(--scen);margin-top:auto}
@@ -136,13 +140,13 @@ footer a{color:inherit}
 </div></header>
 
 <main class="wrap main">
-<aside class="common"><h2><span>COMMON FOUNDATION</span>先把已有底子<br>当作共同基础</h2><div><p><b>当前起点：</b>10 年桌面运维经验，有 Linux 与 Python 基础和数据分析能力；已系统学完 Kubernetes、Ansible 等课程，下一步是动手实操。</p><p>继续补齐 Git（日常代码版本管理）、网络基础（DNS、HTTP、TLS）与脚本工程习惯（日志、错误处理、配置、文档）。<b>下面各阶段只列“新学或需要加深”的部分</b>，不会每张卡重复写 Linux、Python。</p></div></aside>
+<aside class="common"><h2><span>COMMON FOUNDATION</span>先把已有底子<br>当作共同基础</h2><div><p><b>当前起点：</b>10 年桌面运维经验，有 Linux 与 Python 基础和数据分析能力；已系统学完 Kubernetes、Ansible 等课程，下一步是动手实操。求职目标同时包括国内企业和外企。</p><p>继续补齐 Git（日常代码版本管理）、网络基础（DNS、HTTP、TLS）与脚本工程习惯（日志、错误处理、配置、文档）。<b>下面各阶段只列“新学或需要加深”的部分</b>，不会每张卡重复写 Linux、Python。每张卡里<b>蓝字是通用技能</b>，下方标出国内和外企常见的不同工具。<b>外企另需英语</b>：能读英文文档、写英文工单和复盘，面试可能全英文。</p></div></aside>
 
 <section class="section" id="roadmap"><div class="head"><div><div class="kicker">01 / ONE CLEAR PATH</div><h2>五个阶段，区别在工作责任逐步扩大</h2></div><p>路线不是按工具数量升级：先自动完成单项工作，再管理整套环境，再负责应用发布，之后对线上可靠性或工程平台负责。前三站可以在求职前自己动手练，后两站主要靠入职后的线上经历积累。</p></div>
 <div class="stages">
 
 <article class="stage s1" id="p1"><div class="stage-head"><div class="stage-no"><span>STAGE 01</span><span>自动化单项任务</span></div><h3>运维自动化工程师</h3><p>把重复操作做成可重复执行的工具</p><div class="effort"><span>求职前 · 约 4–6 周实操</span></div></div><div class="stage-body">
-<div class="label">这一站新学 / 加深</div><p class="skilltext">Shell 脚本 · Git 工作流 · Ansible · Nginx / MySQL / Redis 部署与排障 · Zabbix 基础监控 · 幂等与错误处理</p>
+<div class="label">这一站新学 / 加深</div><p class="skilltext">Shell 脚本 · Git 工作流 · Ansible · Nginx / MySQL / Redis 部署与排障 · 幂等与错误处理</p><div class="market"><div><span class="tag cn">国内</span>Zabbix 监控 · 中间件调优细节常被深问</div><div><span class="tag fx">外企</span>PowerShell · AD / Entra ID · Intune · 英文文档与工单</div></div>
 <div class="label">日常工作职责</div><p class="duty">接收运维同事的重复任务，梳理步骤和风险；编写脚本或 Ansible Playbook 批量执行；加入日志、失败提示和回退步骤；记录执行结果并维护使用文档。</p>
 <div class="label">交付结果</div><p class="deliver">一个团队能安全重复使用的自动化任务，而不是只在自己电脑运行的脚本。</p>
 <div class="scenario"><b>典型场景</b>公司要给 300 台电脑统一升级 VPN 客户端。你先从资产表读出设备清单，分批安装并检查版本；失败设备单独列出来，可重跑且不会重复安装。</div>
@@ -150,7 +154,7 @@ footer a{color:inherit}
 </div></article>
 
 <article class="stage s2" id="p2"><div class="stage-head"><div class="stage-no"><span>STAGE 02</span><span>创建和维护环境</span></div><h3>云运维 / 云基础设施工程师</h3><p>从“管服务器”走向“搭建一套环境”</p><div class="effort"><span>求职前 · 约 4–6 周实操</span></div></div><div class="stage-body">
-<div class="label">这一站新学 / 加深</div><p class="skilltext">选一朵云（阿里云 / 腾讯云）· VPC 子网与路由 · IAM 权限 · 负载均衡与云数据库 · Terraform</p>
+<div class="label">这一站新学 / 加深</div><p class="skilltext">VPC 子网与路由 · 身份与权限 · 负载均衡与云数据库 · Terraform</p><div class="market"><div><span class="tag cn">国内</span>阿里云 / 腾讯云（RAM 权限）</div><div><span class="tag fx">外企</span>AWS / Azure（IAM / Entra ID 权限）——建议主学，概念可迁移到阿里云</div></div>
 <div class="label">日常工作职责</div><p class="duty">按业务需求规划云网络和权限；用 Terraform 创建测试、预发布或生产资源；处理资源变更、备份和访问控制；检查配置差异、费用和资源使用情况。</p>
 <div class="label">交付结果</div><p class="deliver">一套能从代码创建、复查、调整并安全销毁的云环境。</p>
 <div class="scenario"><b>典型场景</b>研发要一套新的测试环境。你用 Terraform 创建网络、虚拟机、安全规则和对象存储；同事按同一份代码也能创建相同环境，不再照着旧文档手工点云控制台。</div>
@@ -158,7 +162,7 @@ footer a{color:inherit}
 </div></article>
 
 <article class="stage s3" id="p3"><div class="stage-head"><div class="stage-no"><span>STAGE 03</span><span>负责软件交付链路</span></div><h3>DevOps 工程师</h3><p>让代码从提交到上线更快、更稳、更可回退</p><div class="effort"><span>求职前 · 约 6–8 周实操</span></div></div><div class="stage-body">
-<div class="label">这一站新学 / 加深</div><p class="skilltext">Docker 镜像 · CI/CD 流水线 · Kubernetes 基础 · Helm · GitOps</p>
+<div class="label">这一站新学 / 加深</div><p class="skilltext">Docker 镜像 · CI/CD 流水线 · Kubernetes 基础 · Helm · GitOps</p><div class="market"><div><span class="tag cn">国内</span>Jenkins · GitLab CI · Harbor 镜像仓库</div><div><span class="tag fx">外企</span>GitHub Actions · GitLab CI · Azure DevOps · Argo CD</div></div>
 <div class="label">日常工作职责</div><p class="duty">把代码检查、构建镜像、测试和部署接成流水线；管理不同环境的配置；设置发布前检查与健康验证；发布失败时回滚；与开发团队一起缩短交付时间。</p>
 <div class="label">交付结果</div><p class="deliver">团队能追踪每次上线的版本、审批、结果和回退方法。</p>
 <div class="scenario"><b>典型场景</b>每周多次人工上线容易漏步骤。你将构建、测试、部署和健康检查串成流水线；新版本错误率升高时自动停止继续发布，并能一键退回上一版本。</div>
@@ -166,7 +170,7 @@ footer a{color:inherit}
 </div></article>
 
 <article class="stage s4" id="p4"><div class="stage-head"><div class="stage-no"><span>STAGE 04</span><span>对线上质量负责</span></div><h3>SRE 工程师</h3><p>减少事故影响，让可靠性可以衡量和改进</p><div class="effort"><span>入职后 · 靠线上经历积累</span></div></div><div class="stage-body">
-<div class="label">这一站新学 / 加深</div><p class="skilltext">Prometheus 指标 · Grafana · SLI / SLO · 事故响应 · 容量与灾备</p>
+<div class="label">这一站新学 / 加深</div><p class="skilltext">Prometheus 指标 · Grafana · SLI / SLO · 事故响应 · 容量与灾备</p><div class="market"><div><span class="tag cn">国内</span>Zabbix · 夜莺 · ELK</div><div><span class="tag fx">外企</span>Datadog · Splunk / ELK · PagerDuty 值班 · 英文事故复盘</div></div>
 <div class="label">日常工作职责</div><p class="duty">定义服务健康指标和可接受目标；设置能指导行动的告警；参与线上值班、故障止损和根因复盘；推动修复项闭环；验证备份、恢复和容量计划。</p>
 <div class="label">交付结果</div><p class="deliver">故障影响更短、重复事故减少，团队知道可靠性目标是否达成。</p>
 <div class="scenario"><b>典型场景</b>晚高峰 API 响应突然变慢。你从延迟、错误率和资源指标发现数据库连接耗尽，先采取限流恢复服务，再定位连接泄漏；复盘后加上容量告警和发布检查。</div>
@@ -174,7 +178,7 @@ footer a{color:inherit}
 </div></article>
 
 <article class="stage s5" id="p5"><div class="stage-head"><div class="stage-no"><span>STAGE 05</span><span>建设可复用的平台</span></div><h3>平台工程师</h3><p>把基础设施能力做成研发团队的自助服务</p><div class="effort"><span>入职后 · 靠线上经历积累</span></div></div><div class="stage-body">
-<div class="label">这一站新学 / 加深</div><p class="skilltext">Kubernetes 深入 · 平台 API · 可复用模板 · Go / Python 服务开发 · 安全策略</p>
+<div class="label">这一站新学 / 加深</div><p class="skilltext">Kubernetes 深入 · 平台 API · 可复用模板 · Go / Python 服务开发 · 安全策略</p><div class="market"><div><span class="tag cn">国内</span>自研运维 / DevOps 平台 · KubeSphere</div><div><span class="tag fx">外企</span>Backstage 开发者门户 · OPA 策略即代码</div></div>
 <div class="label">日常工作职责</div><p class="duty">访谈研发团队的交付痛点；设计标准化项目模板和自助流程；将集群、发布、权限与监控能力封装成服务；维护平台文档、权限护栏和服务质量。</p>
 <div class="label">交付结果</div><p class="deliver">开发团队可自行创建合规服务环境，平台团队减少重复工单和人工介入。</p>
 <div class="scenario"><b>典型场景</b>每个新项目都要分别申请集群、流水线、域名和监控。你建设一个内部入口：团队选模板并填少量信息，平台自动创建仓库、部署配置和监控，同时套用安全与资源限制。</div>
@@ -184,7 +188,7 @@ footer a{color:inherit}
 </div><p class="footnote">岗位名称和职责摘自 2026 年 9 月采集的公开招聘页面；招聘可能已结束，链接也可能失效，关键职责已摘录在卡片中。岗位示例用于说明企业实际用语，不代表所有公司都按同一阶梯设岗。云基础设施、DevOps、SRE 和平台工程在不少企业会交叉。实操周数按每周约 10 小时估算，仅供参考。</p></section>
 
 <section id="fit" class="section"><div class="head"><div><div class="kicker">02 / YOUR ENTRY POINT</div><h2>结合你的背景，先走这条支线</h2></div><p>10 年桌面运维是业务现场经验。保留它作为优势，同时用可复现的实验补足云环境创建和软件交付经历。</p></div>
-<div class="below"><article class="box"><h3>求职切入建议</h3><p>第一目标可以是“自动化运维工程师”或“云运维 / 初级 DevOps”。先做出能演示的自动化和 IaC 项目，再逐步承担 CI/CD、容器和线上服务责任。不要仅凭岗位标题判断级别，重点看它要求你负责哪些结果。</p><ul class="list"><li><b>你已有：</b>现场排障、用户支持、资产 / 变更经验、Linux 与 Python 基础、数据分析</li><li><b>最先补：</b>Git + Ansible + Nginx / MySQL，把一项熟悉的运维流程自动化并留好日志</li><li><b>并行练：</b>K8s 课程已学完，第一阶段期间就用 kubeadm 搭一个 3 节点集群，别等到第三阶段才上手</li><li><b>接着补：</b>云网络 + Terraform，亲手创建一套可重建的测试环境</li><li><b>之后补：</b>Docker + CI/CD + 基础监控，用项目证明你能交付和回退</li><li><b>可选证书：</b>RHCE、CKA、阿里云 ACP——缺少项目经历时，能帮简历通过初筛</li></ul></article>
+<div class="below"><article class="box"><h3>求职切入建议</h3><p>第一目标可以是“自动化运维工程师”或“云运维 / 初级 DevOps”。先做出能演示的自动化和 IaC 项目，再逐步承担 CI/CD、容器和线上服务责任。不要仅凭岗位标题判断级别，重点看它要求你负责哪些结果。</p><ul class="list"><li><b>你已有：</b>现场排障、用户支持、资产 / 变更经验、Linux 与 Python 基础、数据分析</li><li><b>最先补：</b>Git + Ansible + Nginx / MySQL，把一项熟悉的运维流程自动化并留好日志</li><li><b>并行练：</b>K8s 课程已学完，第一阶段期间就用 kubeadm 搭一个 3 节点集群，别等到第三阶段才上手</li><li><b>接着补：</b>云网络 + Terraform，亲手创建一套可重建的测试环境；云平台主学 AWS 或 Azure，两边都能用</li><li><b>之后补：</b>Docker + CI/CD + 基础监控，用项目证明你能交付和回退</li><li><b>外企优势：</b>桌面运维常用的 AD、Intune、PowerShell 与 Azure 生态衔接，是转外企云运维的差异化卖点</li><li><b>可选证书：</b>通用 CKA；国内 RHCE、阿里云 ACP；外企 AWS SAA、Azure AZ-104——缺少项目经历时，能帮简历通过初筛</li></ul></article>
 <article class="box dark"><h3>数据分析是横向加分项</h3><p>不需要把它单独变成一条容易偏离主线的“数据岗位”。把分析能力用在每阶段的运维问题上：</p><ul class="list"><li><b>自动化：</b>统计任务耗时、成功率和失败原因，证明省了多少工时</li><li><b>云资源：</b>分析闲置资源与月度账单，提出可验证的降本动作</li><li><b>DevOps：</b>比较发布频率、失败率和回滚时间，找交付瓶颈</li><li><b>SRE / 平台：</b>分析告警噪声、服务容量和自助平台使用率</li></ul></article></div>
 </section>
 
