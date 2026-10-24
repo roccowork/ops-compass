@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+  schedule:
+    - cron: '17 1 * * 1' # 每周一 09:17（北京时间）查一次外部链接：招聘示例链接会过期
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # 注意：Cloudflare Pages 不等这里的结果就会部署，想先检查再上线要走分支 + PR
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 22
+      - run: npx --yes html-validate@11.17.0 index.html
+      - name: 站内链接
+        if: github.event_name == 'pull_request' || github.event_name == 'push'
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: --offline --no-progress index.html
+      - name: 外部链接
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: --no-progress index.html
